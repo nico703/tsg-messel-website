@@ -4,8 +4,8 @@ const newsCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    // Vercel erwartet hier einen STRING → also definieren wir ihn so
-    date: z.string(),
+    // ganz bewusst super tolerant:
+    date: z.any().optional(),
     description: z.string().optional(),
   }),
 });
@@ -13,3 +13,4 @@ const newsCollection = defineCollection({
 export const collections = {
   news: newsCollection,
 };
+
