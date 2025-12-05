@@ -2,35 +2,56 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("news");
-const sorted = posts.sort((a, b) =>
-  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-);
+const posts = (await getCollection("news")).sort((a, b) => {
+  const da = new Date(a.data.date as any).getTime();
+  const db = new Date(b.data.date as any).getTime();
+  return db - da; // neueste zuerst
+});
 ---
 
 <BaseLayout title="News – TSG Messel">
 
   <section class="section">
     <div class="container">
-      <h1>News & Aktuelles</h1>
+      <h1>News &amp; Aktuelles</h1>
       <p>Spielberichte, Ankündigungen und Informationen aus unseren Abteilungen.</p>
 
       <div class="grid grid-3" style="margin-top: 2rem;">
 
-        {sorted.map((post) => (
-          <a href={`/news/${post.slug}/`} class="card">
-            <h3>{post.data.title}</h3>
-            {post.data.description && (
-              <p style="color: #555;">{post.data.description}</p>
-            )}
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #777;">
-              {post.data.date}
-            </p>
-          </a>
-        ))}
+        {posts.map((post) => {
+          const date = new Date(post.data.date as any);
+          const formattedDate = date.toLocaleDateString("de-DE", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          });
+
+          return (
+            <a href={`/news/${post.slug}/`} class="card">
+              <h3>{post.data.title}</h3>
+
+              <p
+                style="
+                  font-size: 0.8rem;
+                  margin: 0.2rem 0 0.6rem;
+                  color: #777;
+                "
+              >
+                {formattedDate}
+              </p>
+
+              {post.data.description && (
+                <p style="font-size: 0.95rem; margin: 0;">
+                  {post.data.description}
+                </p>
+              )}
+            </a>
+          );
+        })}
 
       </div>
     </div>
   </section>
 
 </BaseLayout>
+

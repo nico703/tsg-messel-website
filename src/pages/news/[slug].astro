@@ -1,18 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getEntryBySlug } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
 
+// aktuelle Seite laden
 const { slug } = Astro.params;
-const post = await getEntryBySlug("news", slug);
-const { title, date } = post.data;
----
+const post = await getEntry("news", slug);
 
-<BaseLayout title={title}>
+// fallback falls slug nicht existiert
+if (!post) {
+  throw new Error(`News article not found: ${slug}`);
+}
+
+// Datum sicher als string formatieren
+const formattedDate = new Date(post.data.date as any).toLocaleDateString("de-DE", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+});
+
+---
+<BaseLayout title={post.data.title}>
 
   <section class="section">
     <div class="container">
-      <h1>{title}</h1>
-      <p style="color: #777; margin-bottom: 2rem;">{date}</p>
+      <h1>{post.data.title}</h1>
+
+      <p style="color:#777; margin-bottom:2rem;">
+        {formattedDate}
+      </p>
 
       <article class="news-article">
         {post.body}
@@ -21,3 +36,4 @@ const { title, date } = post.data;
   </section>
 
 </BaseLayout>
+

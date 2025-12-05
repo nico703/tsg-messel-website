@@ -1,10 +1,11 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 
 const newsCollection = defineCollection({
   type: "content",
   schema: z.object({
-    title: z.string(),           // nicht 'titel', sondern 'title'
-    date: z.string(),
+    title: z.string(),
+    // akzeptiert sowohl String als auch Date -> Fehler ist damit sicher weg
+    date: z.union([z.string(), z.date()]),
     description: z.string().optional(),
   }),
 });
@@ -12,4 +13,3 @@ const newsCollection = defineCollection({
 export const collections = {
   news: newsCollection,
 };
-
