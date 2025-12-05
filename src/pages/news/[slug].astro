@@ -1,24 +1,34 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 
-// aktuelle Seite laden
-const { slug } = Astro.params;
-const post = await getEntry("news", slug);
+/**
+ * Sagt Astro, welche Detailseiten es gibt:
+ * /news/<slug> für jeden Eintrag aus der "news"-Collection.
+ */
+export async function getStaticPaths() {
+  const posts = await getCollection("news");
 
-// fallback falls slug nicht existiert
-if (!post) {
-  throw new Error(`News article not found: ${slug}`);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
-// Datum sicher als string formatieren
-const formattedDate = new Date(post.data.date as any).toLocaleDateString("de-DE", {
-  day: "2-digit",
-  month: "2-digit",
-  year: "numeric",
-});
+// Der einzelne Beitrag wird aus den props genommen:
+const { post } = Astro.props;
 
+// Datum robust formatieren (egal ob string oder Date)
+const formattedDate = new Date(post.data.date as any).toLocaleDateString(
+  "de-DE",
+  {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }
+);
 ---
+
 <BaseLayout title={post.data.title}>
 
   <section class="section">
