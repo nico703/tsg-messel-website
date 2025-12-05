@@ -1,0 +1,62 @@
+---
+const { title = "TSG Messel", description = "Sport für alle Generationen" } = Astro.props;
+---
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo">
+          <img src="/images/tsg-logo.png" alt="TSG Messel Logo" class="logo-mark" />
+          <span>TSG Messel</span>
+        </a>
+
+<!-- FUSSBALL.DE Widgets Script -->
+<script
+  type="text/javascript"
+  src="https://www.fussball.de/widgets.js"
+  async>
+</script>
+
+        <nav class="main-nav">
+          <a href="/departments/">Abteilungen</a>
+          <a href="/training/">Training & Zeiten</a>
+          <a href="/about/">Verein</a>
+          <a 
+            href="https://team.jako.com/de-de/team/tsg_messel/?page=1&sort_by="
+            target="_blank"
+            rel="noreferrer"
+          >
+            TSG Shop
+          </a>
+          <a href="/contact/">Kontakt</a>
+        </nav>        
+              
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container" style="display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:space-between;align-items:center;">
+        <span>© 2025 TSG Messel – Sport für alle Generationen</span>
+        <span>
+          <a href="/impressum/">Impressum</a> ·
+          <a href="/datenschutz/">Datenschutzerklärung</a>
+        </span>
+      </div>
+    </footer>    
+
+  </body>
+</html>
+

@@ -1,0 +1,278 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Training & Zeiten – TSG Messel">
+
+  <!-- HERO -->
+  <section class="hero hero--subpage">
+    <div class="container">
+      <h1>Trainingsübersicht</h1>
+      <p>
+        Hier findest du die aktuellen Trainingszeiten der TSG Messel – übersichtlich nach 
+        Abteilungen sortiert. Detailinfos zur Jugend stehen zusätzlich unter 
+        <a href="/teams/jugend/">Jugendfußball</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- INHALT MIT ACCORDIONS -->
+  <section class="section">
+    <div class="container">
+
+      <!-- FUSSBALL -->
+      <details class="training-group" open>
+        <summary>
+          <span>⚽ Fußball</span>
+          <span class="training-group__icon">›</span>
+        </summary>
+
+        <table class="training-table training-table-wide">
+          <thead>
+            <tr>
+              <th>Gruppe / Team</th>
+              <th>Tag</th>
+              <th>Uhrzeit</th>
+              <th>Ort</th>
+              <th>Ansprechpartner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Mannschaft</td>
+              <td>Di &amp; Do</td>
+              <td>19:00 – 20:30 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>Volker Hermanns / Toni (Mentor) Kadrija</td>
+            </tr>
+            <tr>
+              <td>2. Mannschaft</td>
+              <td>Di &amp; Do</td>
+              <td>19:00 – 20:30 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>Philipp Gerbig / Marcel Schott</td>
+            </tr>
+            <tr>
+              <td>AH</td>
+              <td>Fr</td>
+              <td>19:00 – 20:30 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>André Hieronymus</td>
+            </tr>
+
+            <!-- Jugend-Fußball -->
+            <tr>
+              <td>Minis (Jg. 2019)</td>
+              <td>Do</td>
+              <td>17:00 – 18:00 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>Karl Heinz Fröhner / Sarah Bohland / Jan Bohland</td>
+            </tr>
+            <tr>
+              <td>G-Jugend (Jg. 2017/2018)</td>
+              <td>Di</td>
+              <td>17:00 – 18:30 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>Norman Bauer / Gilbert Clippard / Jörn Glaw / Mario Töpel</td>
+            </tr>
+            <tr>
+              <td>F-Jugend (Jg. 2015/2016)</td>
+              <td>Mi &amp; Fr</td>
+              <td>16:30 – 18:00 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>Matthias Blatt / Pierre Reisinger / Semih Demir / Mehmet Avci</td>
+            </tr>
+            <tr>
+              <td>E-Jugend (Jg. 2013/2014)</td>
+              <td>Di &amp; Do</td>
+              <td>
+                Di: 17:30 – 18:30 Uhr<br />
+                Do: 17:00 – 18:30 Uhr
+              </td>
+              <td>Sportplatz TSG Messel</td>
+              <td>Lukas Galinski / John Jay Kappeser</td>
+            </tr>
+            <tr>
+              <td>D-Jugend (Jg. 2011/2012)</td>
+              <td>Di &amp; Do</td>
+              <td>17:00 – 19:00 Uhr</td>
+              <td>Sportplatz TSG Messel</td>
+              <td>David Maerz / Michael Weygand</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <!-- TURNEN -->
+      <details class="training-group">
+        <summary>
+          <span>🤸 Turnen</span>
+          <span class="training-group__icon">›</span>
+        </summary>
+
+        <table class="training-table training-table-wide">
+          <thead>
+            <tr>
+              <th>Gruppe / Angebot</th>
+              <th>Tag</th>
+              <th>Uhrzeit</th>
+              <th>Ort</th>
+              <th>Ansprechpartner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kinderturnen (4–6 Jahre)</td>
+              <td>Mo</td>
+              <td>16:00 – 17:00 Uhr</td>
+              <td>Sporthalle Messel</td>
+              <td>Übungsleiter:in Turnen</td>
+            </tr>
+            <tr>
+              <td>Kinderturnen (7–10 Jahre)</td>
+              <td>Mo</td>
+              <td>17:00 – 18:00 Uhr</td>
+              <td>Sporthalle Messel</td>
+              <td>Übungsleiter:in Turnen</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <!-- LEICHTATHLETIK -->
+      <details class="training-group">
+        <summary>
+          <span>🏃 Leichtathletik</span>
+          <span class="training-group__icon">›</span>
+        </summary>
+
+        <table class="training-table training-table-wide">
+          <thead>
+            <tr>
+              <th>Gruppe / Angebot</th>
+              <th>Tag</th>
+              <th>Uhrzeit</th>
+              <th>Ort</th>
+              <th>Ansprechpartner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Hier deine Leichtathletik-Zeilen -->
+            <tbody>
+                <tr>
+                    <td>Jugendliche &amp; junge Erwachsene</td>
+                    <td>Mo</td>
+                    <td>18:00 – 19:00 (19:30) Uhr</td>
+                    <td>Sportplatz TSG Messel</td>
+                    <td>Trainerteam Leichtathletik</td>
+                  </tr>
+                  <tr>
+                    <td>Jugendliche &amp; junge Erwachsene</td>
+                    <td>Mi</td>
+                    <td>18:00 – 19:00 (20:00) Uhr</td>
+                    <td>Sporthalle Messel</td>
+                    <td>Trainerteam Leichtathletik</td>
+                  </tr>                  
+              </tbody>        
+        </table>
+      </details>
+
+      <!-- GYMNASTIK -->
+      <details class="training-group">
+        <summary>
+          <span>🧘 Gymnastik</span>
+          <span class="training-group__icon">›</span>
+        </summary>
+
+        <table class="training-table training-table-wide">
+          <thead>
+            <tr>
+              <th>Gruppe / Angebot</th>
+              <th>Tag</th>
+              <th>Uhrzeit</th>
+              <th>Ort</th>
+              <th>Ansprechpartner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Hier deine Gymnastik-Zeilen -->
+            <tbody>
+                <tr>
+                  <td>Yoga</td>
+                  <td>Mi</td>
+                  <td>16:50 – 17:50 Uhr</td>
+                  <td>Nebengebäude kath. Kirche, Adelungstraße 2</td>
+                  <td>Manfred Wolf / Christine Zaschel</td>
+                </tr>
+                <tr>
+                  <td>Wirbelsäulen- &amp; Fitnessgymnastik</td>
+                  <td>Mo</td>
+                  <td>09:15 – 10:15 Uhr</td>
+                  <td>Sporthalle am Trinkborn</td>
+                  <td>Gymnastikabteilung</td>
+                </tr>
+                <tr>
+                  <td>Wirbelsäulen- &amp; Fitnessgymnastik</td>
+                  <td>Fr</td>
+                  <td>09:00 – 10:00 Uhr</td>
+                  <td>Sporthalle am Trinkborn</td>
+                  <td>Gymnastikabteilung</td>
+                </tr>
+                <tr>
+                  <td>Fitness-/Übungsgruppe abends</td>
+                  <td>Mi</td>
+                  <td>19:30 – 20:30 Uhr</td>
+                  <td>Sporthalle am Trinkborn</td>
+                  <td>Gymnastikabteilung</td>
+                </tr>
+                <tr>
+                  <td>Frauengymnastik 60+</td>
+                  <td>Di</td>
+                  <td>09:15 – 10:15 Uhr</td>
+                  <td>Sporthalle am Trinkborn</td>
+                  <td>Karin Kühne / Rosalinde Falch</td>
+                </tr>
+              </tbody>          
+        </table>
+      </details>
+
+      <!-- VOLLEYBALL & BADMINTON -->
+      <details class="training-group">
+        <summary>
+          <span>🏐 Volleyball & 🏸 Badminton</span>
+          <span class="training-group__icon">›</span>
+        </summary>
+
+        <table class="training-table training-table-wide">
+          <thead>
+            <tr>
+              <th>Gruppe / Angebot</th>
+              <th>Tag</th>
+              <th>Uhrzeit</th>
+              <th>Ort</th>
+              <th>Hinweis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Volleyball</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>Details auf der Website der Volleyball-Abteilung.</td>
+            </tr>
+            <tr>
+              <td>Badminton</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>Details auf der Website der Badminton-Abteilung.</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+    </div>
+  </section>
+
+</BaseLayout>
